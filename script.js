@@ -18,6 +18,7 @@ randomColor.addEventListener('click', function() {
 });
 
 
+
 function changeUI(getColor) {
     const body = document.querySelector('body');
     body.style.backgroundColor = getColor;
