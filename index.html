@@ -42,7 +42,7 @@
 </head>
 <body>
     
-    <h1>Bermain dengan warna</h1>
+    <h1>Color Editor</h1>
     <div class="row">
         <div class="box box1"></div>
         <div class="box box2"></div>
@@ -55,21 +55,21 @@
         <button type="button" class="random-color">Random Color</button>
     </div>
 
-    <section>
-        <h3 class="color-slider">Color Slider</h3>
+    <section class="color-slider">
+        <h3>Color Slider</h3>
         <div class="row">
             <div class="box" style="background-color: red;"></div>
-            <input type="range" name="sRed" min="0" max="255">
+            <input type="range" name="sRed" value="255" min="0" max="255">
         </div>
         <div class="row">
             <div class="box" style="background-color: green;"></div>
-            <input type="range" name="sGreen" min="0" max="255">
+            <input type="range" name="sGreen" value="255" min="0" max="255">
         </div>
         <div class="row">
             <div class="box" style="background-color: blue;"></div>
-            <input type="range" name="sBlue" min="0" max="255">
+            <input type="range" name="sBlue" value="255" min="0" max="255">
         </div>
-        <button type="button" class="change-color">Change Color</button>
+        <p class="rgb-color">rgb(255,255,255)</p>
     </section>
 
 <script src="script.js"></script>
