@@ -20,9 +20,9 @@ randomColor.addEventListener('click', function() {
     changeSlider(getColor);
 });
 
-// Color Slider
+// Color Slider Real Time
 let color = [255, 255, 255];
-document.addEventListener('change', function(e) {
+document.addEventListener('input', function(e) {
     if(e.target.getAttribute('name') == 'sRed') {
         let red = e.target.value;
         color[0] = red;
@@ -37,34 +37,16 @@ document.addEventListener('change', function(e) {
     changeUI(getColor);
 });
 
-// Real Time changer slider
-// let color = [255, 255, 255];
-// document.addEventListener('input', function(e) { 
-//  // ======> 'event change to input, effect: color slider not work went click random color, and favorite color'
-//     if(e.target.getAttribute('name') == 'sRed') {
-//         let red = e.target.value;
-//         color[0] = red;
-//     } else if (e.target.getAttribute('name') == 'sGreen') {
-//         let green = e.target.value;
-//         color[1] = green;
-//     } else if (e.target.getAttribute('name') == 'sBlue') {
-//         let blue = e.target.value;
-//         color[2] = blue;
-//     }
-//     let getColor = `rgb(${color[0]},${color[1]},${color[2]})`;
-//     changeUI(getColor);
-// });
-
 // Mouse over change
-document.body.addEventListener('mousemove', function(event) {
-    const xPos = Math.round(event.clientX / window.innerWidth * 255);
-    const yPos = Math.round(event.clientY / window.innerHeight * 255);
-    const zPos = Math.round(xPos / yPos * 255);
-    const getColor = `rgb(${xPos}, ${yPos}, ${zPos})`;
-    document.body.style.backgroundColor = getColor;
-    changeUI(getColor);
-    changeSlider(getColor);
-})
+// document.body.addEventListener('mousemove', function(event) {
+//     const xPos = Math.round(event.clientX / window.innerWidth * 255);
+//     const yPos = Math.round(event.clientY / window.innerHeight * 255);
+//     const zPos = Math.round(xPos / yPos * 255);
+//     const getColor = `rgb(${xPos}, ${yPos}, ${zPos})`;
+//     document.body.style.backgroundColor = getColor;
+//     changeUI(getColor);
+//     changeSlider(getColor);
+// })
 
 
 // Change UI
