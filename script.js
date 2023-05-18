@@ -40,6 +40,23 @@ document.addEventListener('change', function(e) {
     changeUI(getColor);
 });
 
+// Real Time changer slider
+// let color = [255, 255, 255];
+// document.addEventListener('input', function(e) {
+//     if(e.target.getAttribute('name') == 'sRed') {
+//         let red = e.target.value;
+//         color[0] = red;
+//     } else if (e.target.getAttribute('name') == 'sGreen') {
+//         let green = e.target.value;
+//         color[1] = green;
+//     } else if (e.target.getAttribute('name') == 'sBlue') {
+//         let blue = e.target.value;
+//         color[2] = blue;
+//     }
+//     let getColor = `rgb(${color[0]},${color[1]},${color[2]})`;
+//     changeUI(getColor);
+// });
+
 
 // Change UI
 function changeUI(getColor) {
