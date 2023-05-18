@@ -4,10 +4,7 @@ document.addEventListener('click', function(e) {
         const box = getComputedStyle(e.target);
         let getColor = box.backgroundColor;
         changeUI(getColor);
-        const regExp = /\(([^)]+)\)/;
-        const getRGB = regExp.exec(getColor);
-        const rgbSplit = getRGB[1].split(', ');
-        changeSlider(rgbSplit);
+        changeSlider(getColor);
     }
 });
 
@@ -18,9 +15,9 @@ randomColor.addEventListener('click', function() {
     let color = c.map(c => {
         return c += Math.floor(Math.random() * 255);
     })
-    let getColor = `rgb(${color[0]},${color[1]},${color[2]})`;
+    let getColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
     changeUI(getColor);
-    changeSlider(color);
+    changeSlider(getColor);
 });
 
 // Color Slider
@@ -36,13 +33,14 @@ document.addEventListener('change', function(e) {
         let blue = e.target.value;
         color[2] = blue;
     }
-    let getColor = `rgb(${color[0]},${color[1]},${color[2]})`;
+    let getColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
     changeUI(getColor);
 });
 
 // Real Time changer slider
 // let color = [255, 255, 255];
-// document.addEventListener('input', function(e) {
+// document.addEventListener('input', function(e) { 
+//  // ======> 'event change to input, effect: color slider not work went click random color, and favorite color'
 //     if(e.target.getAttribute('name') == 'sRed') {
 //         let red = e.target.value;
 //         color[0] = red;
@@ -62,6 +60,7 @@ document.addEventListener('change', function(e) {
 function changeUI(getColor) {
     const body = document.querySelector('body');
     body.style.backgroundColor = getColor;
+    // RGB Reader
     const rgbColor = document.querySelector('.rgb-color');
     const pText = `${getColor}`;
     rgbColor.innerHTML = pText;
@@ -69,7 +68,10 @@ function changeUI(getColor) {
 
 
 // Change Slider
-function changeSlider(rgbSplit) {
+function changeSlider(getColor) {
+    const regExp = /\(([^)]+)\)/;
+    const getRGB = regExp.exec(getColor);
+    const rgbSplit = getRGB[1].split(', ');
     sRed = document.querySelector('input[name=sRed]');
     sGreen = document.querySelector('input[name=sGreen]');
     sBlue = document.querySelector('input[name=sBlue]');
@@ -77,4 +79,3 @@ function changeSlider(rgbSplit) {
     sGreen.setAttribute('value', `${rgbSplit[1]}`);
     sBlue.setAttribute('value', `${rgbSplit[2]}`);
 }
-
