@@ -55,6 +55,17 @@ document.addEventListener('change', function(e) {
 //     changeUI(getColor);
 // });
 
+// Mouse over change
+document.body.addEventListener('mousemove', function(event) {
+    const xPos = Math.round(event.clientX / window.innerWidth * 255);
+    const yPos = Math.round(event.clientY / window.innerHeight * 255);
+    const zPos = Math.round(xPos / yPos * 255);
+    const getColor = `rgb(${xPos}, ${yPos}, ${zPos})`;
+    document.body.style.backgroundColor = getColor;
+    changeUI(getColor);
+    changeSlider(getColor);
+})
+
 
 // Change UI
 function changeUI(getColor) {
@@ -65,7 +76,6 @@ function changeUI(getColor) {
     const pText = `${getColor}`;
     rgbColor.innerHTML = pText;
 };
-
 
 // Change Slider
 function changeSlider(getColor) {
