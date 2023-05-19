@@ -1,2 +1,2 @@
 View this app: 
-https://code-editor-orcin.vercel.app/
+https://color-editor-orcin.vercel.app/
